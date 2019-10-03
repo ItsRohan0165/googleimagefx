@@ -19,7 +19,7 @@ async def on_ready():
     print('Logged in as')
    
 
-@client.command()
+@client.command(pass_context=True)
 async def google(*text: str):
     finaltext = ' '
     for word in text:
@@ -37,7 +37,7 @@ async def google(*text: str):
         formatText="*" + result['snippet'] + "*"
         channel = message.channel
         await channel.send(formatText)
-@client.command()
+@client.command(pass_context=True)
 async def gimg(*text : str):
     print('got here')
 
