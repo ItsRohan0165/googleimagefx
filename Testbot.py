@@ -1,4 +1,6 @@
 import discord
+from discord import utils, Client
+from discord.ext import commands
 import random
 
 from googleapiclient.discovery import build
