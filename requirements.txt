@@ -2,3 +2,4 @@ discord.py==1.2.3
 asyncio
 pprint
 google-api-python-client
+git https://github.com/Rapptz/discord.py.git
