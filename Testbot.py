@@ -47,8 +47,8 @@ async def gimg(*text : str):
     for word in text:
         finaltext = finaltext + word + " "
     
-    api_key = "AIzaSyDEI9ei37MeTgaDyQhayyXSdHPM8ZJ4Gfk"
-    cse_id = "001464282721790659668:_ja4f_we2rk"
+    api_key = " "
+    cse_id = " "
 
     def google_search(search_term, api_key, cse_id, **kwargs):
         service = build("customsearch", "v1", developerKey=api_key)
