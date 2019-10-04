@@ -25,8 +25,8 @@ async def google(*text: str):
     for word in text:
         finaltext = finaltext + word  + " "
     
-    api_key = "AIzaSyDWpZCMkyw6g-VackfIQ-zqIZwXpxxoC6w"
-    cse_id = "002090988512210948953:3llemhwwasw"
+    api_key = (os.getenv("API"))
+    cse_id = (os.getenv("CSE"))
     def google_search(search_term, api_key, cse_id, **kwargs):
         service = build("customsearch", "v1", developerKey=api_key)
         res = service.cse().list(q=search_term, cx=cse_id, **kwargs).execute()
