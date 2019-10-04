@@ -35,8 +35,7 @@ async def google(*text: str):
     results = google_search(finaltext, api_key, cse_id, num=3)
     for result in results:
         formatText="*" + result['snippet'] + "*"
-        channel = message.channel
-        await channel.send(formatText)
+        await ctx.send(formatText)
 @client.command(pass_context=False)
 async def gimg(*text : str):
     print('got here')
@@ -59,8 +58,7 @@ async def gimg(*text : str):
     results = google_search(finaltext, api_key, cse_id, num=1, searchType= 'image')
     for result in results:
         formatText = "" + result['link'] + ""
-        channel = message.channel
-        await channel.send(formatText)
+        await ctx.send(formatText)
 @client.command()
 async def jimmy():
     """In case I'm not here obviously"""
@@ -69,23 +67,12 @@ async def jimmy():
 @client.command(description='For when you wanna settle the score some other way')
 async def choose(*choices : str):
     """Chooses between multiple choices."""
-    channel = message.channel
-    await channel.send(random.choice(choices))
-@client.command()
-async def KrillMe():
-    """Posts Krill"""
-    channel = message.channel
-    await channel.send("http://coolaustralia.org/wp-content/uploads/2013/05/billandwill.jpg")
-@client.command()
-async def joined(member : discord.Member):
-    """Says when a member joined."""
-    channel = message.channel
-    await channel.send('{0.name} joined in {0.joined_at}'.format(member))
+    await ctx.send(random.choice(choices))
+
 @client.command()
 async def Tides():
     """How quickly the tides turn"""
-    channel = message.channel
-    await channel.send("http://i1.kym-cdn.com/photos/images/original/001/072/409/23c.gif")
+    await ctx.send("http://i1.kym-cdn.com/photos/images/original/001/072/409/23c.gif")
 #@asyncio.coroutine
 #def on_message(message):
     #yield from self.process_commands(message)
